@@ -4,8 +4,11 @@ public class TarjetaCredito extends Producto {
     private double cupoMaximo;
     private double saldo;
 
+    Validador validador = new Validador();
+
     public TarjetaCredito(double cupoMaximo, double saldo) {
         this.cupoMaximo = cupoMaximo;
+        //validador.validarEntradaNumerica(cupoMaximo);
         this.saldo = saldo;
     }
 
