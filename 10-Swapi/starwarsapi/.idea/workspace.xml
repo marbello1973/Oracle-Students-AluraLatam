@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61fa07e9-c582-4aed-8afb-655cd7ca41ce" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
