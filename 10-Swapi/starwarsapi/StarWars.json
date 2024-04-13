@@ -1,0 +1,16 @@
+[
+  {
+    "title": "A New Hope",
+    "director": "George Lucas",
+    "producer": "Gary Kurtz, Rick McCallum",
+    "release_date": "1977-05-25",
+    "episode_id": "4"
+  },
+  {
+    "title": "The Empire Strikes Back",
+    "director": "Irvin Kershner",
+    "producer": "Gary Kurtz, Rick McCallum",
+    "release_date": "1980-05-17",
+    "episode_id": "5"
+  }
+]

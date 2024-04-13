@@ -1,1 +1,34 @@
-nombre='Top Gun', fechaDeLanzamiento=1986, duracion=109
+[
+  {
+    "Nombre": "Matrix",
+    "FechaDeLanzamiento": 1993,
+    "DuracionEnMinutos": 60,
+    "IncluidoEnPlan": false,
+    "SumaDelasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  },
+  {
+    "Nombre": "Rambo",
+    "FechaDeLanzamiento": 2008,
+    "DuracionEnMinutos": 92,
+    "IncluidoEnPlan": false,
+    "SumaDelasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  },
+  {
+    "Nombre": "Jupiter",
+    "FechaDeLanzamiento": 2019,
+    "DuracionEnMinutos": 13,
+    "IncluidoEnPlan": false,
+    "SumaDelasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  },
+  {
+    "Nombre": "Top Gun",
+    "FechaDeLanzamiento": 1986,
+    "DuracionEnMinutos": 109,
+    "IncluidoEnPlan": false,
+    "SumaDelasEvaluaciones": 0.0,
+    "TotalDelasEvaluaciones": 0
+  }
+]

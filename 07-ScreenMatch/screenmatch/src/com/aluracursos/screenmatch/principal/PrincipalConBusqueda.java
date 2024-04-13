@@ -13,6 +13,8 @@ import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class PrincipalConBusqueda {
@@ -20,46 +22,58 @@ public class PrincipalConBusqueda {
     public static void main(String[] args) throws IOException, InterruptedException {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Escriba nombre de pelicula");
-        var busqueda = sc.nextLine();
+        List<Titulo> titulos = new ArrayList<>();
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .setPrettyPrinting()
+                .create();
 
-        String busquedaCodificada = URLEncoder.encode(busqueda, "UTF-8");
+        while (true) {
 
-        String url = "https://www.omdbapi.com/?t="+busquedaCodificada+"&apikey=c998aa21";
-        try{
-            HttpClient client = HttpClient.newHttpClient();
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(url))
-                    .build();
-            HttpResponse<String> response = client
-                    .send(request, HttpResponse.BodyHandlers.ofString());
+            System.out.println("Escriba nombre de pelicula");
+            var busqueda = sc.nextLine();
 
-            String json = response.body();
+            if(busqueda.equalsIgnoreCase("salir")){
+                break;
+            }
 
-            System.out.println(json);
+            String busquedaCodificada = URLEncoder.encode(busqueda, "UTF-8");
 
-            Gson gson = new GsonBuilder()
-                    .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
-                    .create();
-            TituloOmdb miTituloOmdb = gson.fromJson(json, TituloOmdb.class);
-            System.out.println("Mi titulo omdb: " + miTituloOmdb);
+            String url = "https://www.omdbapi.com/?t=" + busquedaCodificada + "&apikey=c998aa21";
+            try {
+                HttpClient client = HttpClient.newHttpClient();
+                HttpRequest request = HttpRequest.newBuilder()
+                        .uri(URI.create(url))
+                        .build();
+                HttpResponse<String> response = client
+                        .send(request, HttpResponse.BodyHandlers.ofString());
 
-            Titulo miTitulo = new Titulo(miTituloOmdb);
-            System.out.println(miTitulo);
+                String json = response.body();
 
-            FileWriter escritura = new FileWriter("peliculas.txt");
-            escritura.write(miTitulo.toString());
-            escritura.close();
+                System.out.println(json);
 
-        }catch(NumberFormatException ex) {
-            System.out.println("Error al ejecutar app");
-            System.out.println(ex.getMessage());
-        }catch(Exception ex){
-            System.out.println("Error del programa");
-        }finally {
-            System.out.println("Finalizo ejecucion...!");
+                TituloOmdb miTituloOmdb = gson.fromJson(json, TituloOmdb.class);
+                System.out.println("Mi titulo omdb: " + miTituloOmdb);
+
+                Titulo miTitulo = new Titulo(miTituloOmdb);
+                System.out.println(miTitulo);
+
+                titulos.add(miTitulo);
+
+            } catch (NumberFormatException ex) {
+                System.out.println("Error al ejecutar app");
+                System.out.println(ex.getMessage());
+            } catch (Exception ex) {
+                System.out.println("Error del programa");
+            } finally {
+                System.out.println("Finalizo ejecucion...!");
+            }
+
         }
-
+        System.out.println(titulos);
+        FileWriter escritura = new FileWriter("peliculas.json");
+        escritura.write(gson.toJson(titulos));
+        escritura.close();
 
     }
 }
