@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61fa07e9-c582-4aed-8afb-655cd7ca41ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../07-ScreenMatch/screenmatch/src/com/aluracursos/screenmatch/principal/LecturaArchivo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/starwars/http/HttpPeticion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/starwars/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/starwars/modelos/Titulo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/starwars/modelos/TituloOmdb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/starwarsapi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../07-ScreenMatch/screenmatch/peliculas.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../07-ScreenMatch/screenmatch/peliculas.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../07-ScreenMatch/screenmatch/peliculas.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../07-ScreenMatch/screenmatch/src/com/aluracursos/screenmatch/modelos/Titulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../07-ScreenMatch/screenmatch/src/com/aluracursos/screenmatch/modelos/Titulo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../07-ScreenMatch/screenmatch/src/com/aluracursos/screenmatch/principal/PrincipalConBusqueda.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../07-ScreenMatch/screenmatch/src/com/aluracursos/screenmatch/principal/PrincipalConBusqueda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,11 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2f1TpFj7gaQ2Ll7wszDPqfSKsNi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -51,6 +37,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/25-Alura curso oracle/02-Java/07-ScreenMatch/gson-2.10.1.jar",
     "project.structure.last.edited": "Modules",
