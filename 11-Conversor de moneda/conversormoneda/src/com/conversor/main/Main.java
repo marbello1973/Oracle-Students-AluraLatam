@@ -33,7 +33,7 @@ public class Main {
                         MonedasRecord moneda = http.realizarPeticionApi(monedaInicial);
                         if(moneda != null){
                             double resultado = conversor.convertirMoneda(cantidad, moneda, monedaDestino);
-                            System.out.println("Resultado de convertir: " + monedaInicial + " a " + monedaDestino + " es " + resultado);
+                            System.out.println("Resultado de convertir: " + monedaInicial + " a " + monedaDestino + " es de $" + resultado +" "+monedaInicial);
                             System.out.println("¿Desea realizar otra conversion..? SI/NO ");
                             String respuesta = scanner.next().toUpperCase();
                             if(!respuesta.equals("SI")){
@@ -48,7 +48,7 @@ public class Main {
                         salir = true;
                         break;
                     default:
-                        System.out.println("Opcion no valida. POr favor, elija una opcion del menu");
+                        System.out.println("Opcion no valida. Por favor, elija una opcion del menu");
                 }
             }catch(InputMismatchException ex){
                 System.out.println("Debe insertar un numero");

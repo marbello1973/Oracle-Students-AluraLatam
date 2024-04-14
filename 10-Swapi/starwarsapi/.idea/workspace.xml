@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61fa07e9-c582-4aed-8afb-655cd7ca41ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/src/com/conversor/http/HttpPeticionApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/src/com/conversor/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/src/com/conversor/modelos/MonedasRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../07-ScreenMatch/gson-2.10.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/conversormoneda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/conversormoneda.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/src/com/conversor/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/src/com/conversor/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/src/com/conversor/menu/MostrarMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../11-Conversor de moneda/conversormoneda/src/com/conversor/menu/MostrarMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -28,7 +28,7 @@ public class MostrarMenu {
 
        // Mostrar las iniciales en filas de 10 caracteres
        System.out.println("===============================================");
-       System.out.println("       ELIJA INICIALES A COVERTIR MONEDA");
+       System.out.println("       ELIJA LAS MONEDAS A COVERTIR");
        System.out.println("===============================================");
 
        int largoDeFila = 45;
