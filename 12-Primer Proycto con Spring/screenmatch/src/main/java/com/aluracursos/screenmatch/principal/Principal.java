@@ -46,11 +46,11 @@ public class Principal {
             }
         }
 
-        //con lambas
+        //con lambas imprimir titulos
         System.out.println("CON LAMBDAS");
         datosTemporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
 
-        //Convertir todas las informciones a una lista del tip DatoEpisodio
+        //Convertir todas las informciones a una lista del tipo DatoEpisodio
         List<DatosEpisodio> datosEpisodios = datosTemporadas.stream()
                 .flatMap(t -> t.episodios().stream())
                 .collect(Collectors.toList());
