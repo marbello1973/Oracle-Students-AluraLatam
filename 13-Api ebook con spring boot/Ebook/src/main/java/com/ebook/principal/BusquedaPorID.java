@@ -11,7 +11,7 @@ public class BusquedaPorID implements IPrincipal{
             Long buscar_por_id = scanner.nextLong();
             if(buscar_por_id <= 0) System.out.println("Ingrese numero mayor a 0 (cero)");
 
-            var json = consultaApi.obtenerDatosDeLaApi("https://gutendex.com/books/" + buscar_por_id + "/");
+            var json = consultaApi.obtenerDatosDeLaApi(url + buscar_por_id + "/");
 
             //validar que la url tenga data
             if(json.isEmpty()){
@@ -23,7 +23,10 @@ public class BusquedaPorID implements IPrincipal{
             var datosID = conversor.obtenerDatos(json, LibroResults.class);
             if(datosID != null){
                 LibroResults libroResults = datosID;
-                System.out.println("Libro encontrado");
+                System.out.println("------------------------------------------------------");
+                System.out.println("              LIBRO ENCONTRADO POR ID                 ");
+                System.out.printf("%d%n", buscar_por_id);
+                System.out.println("------------------------------------------------------");
                 System.out.println("ID: " + libroResults.id());
                 System.out.println("Titulo: " + libroResults.titulo());
                 for (DatosDeAuthor autor : libroResults.authors()) {
@@ -35,7 +38,7 @@ public class BusquedaPorID implements IPrincipal{
                 System.out.println("Temas: " + libroResults.subjects());
                 System.out.println("Medio: " + libroResults.media_type());
                 System.out.println("Descargas: " + libroResults.download_count());
-
+                System.out.println("------------------------------------------------------");
                 System.out.println();
             }else {
                 System.out.println("Id no existe");

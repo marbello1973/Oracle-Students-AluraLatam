@@ -1,14 +1,8 @@
 package com.ebook.principal;
 
-import com.ebook.convertirdatos.ConvertirDatos;
 import com.ebook.modelo.DatosDeAuthor;
 import com.ebook.modelo.DatosLibros;
 import com.ebook.modelo.LibroResults;
-import com.ebook.servicio.ConsultaApi;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class BusquedaTituloAuthor implements IPrincipal{
     public void busquedaTituloAuthor() {
