@@ -4,6 +4,7 @@ import com.ebook.modelo.DatosLibros;
 import com.ebook.modelo.LibroResults;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,5 +31,12 @@ public class BusquedaPorDescargas implements IPrincipal{
                 result.results().forEach(n -> System.out.println("Titulo min: " + n.titulo()));
             }
         }
+
+        System.out.println("Top 10 libros mas descargados");
+        datos.results().stream()
+                .sorted(Comparator.comparing(LibroResults::download_count).reversed())
+                .limit(10)
+                .map(l -> l.titulo().toUpperCase())
+                .forEach(System.out::println);
     }
 }
