@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### token chat gpt ###
+Token Api ChatGpt
+.env
