@@ -21,7 +21,7 @@ public record DatosSerie(
        @JsonAlias("Language") String idioma,
        @JsonAlias("Country") String pais,
        @JsonAlias("Awards") String premios,
-       @JsonAlias("Poster") String url_media,
+       @JsonAlias("Poster") String poster,
        @JsonAlias("Type") String tipo,
        @JsonAlias("Episode") Integer numeroEpisodio
 

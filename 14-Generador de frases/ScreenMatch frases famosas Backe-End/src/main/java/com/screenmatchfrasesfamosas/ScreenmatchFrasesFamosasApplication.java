@@ -1,14 +1,13 @@
-package com.aluracursos.screenmatch;
-
+package com.screenmatchfrasesfamosas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ScreenmatchApplication {
+public class ScreenmatchFrasesFamosasApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ScreenmatchApplication.class, args);
+		SpringApplication.run(ScreenmatchFrasesFamosasApplication.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.aluracursos.screenmatch;
+/*package com.aluracursos.screenmatch;
 
 import com.aluracursos.screenmatch.principal.Principal;
 import com.aluracursos.screenmatch.repository.SerieRepository;
@@ -22,10 +22,10 @@ public class ScreenmatchApplicationConsola implements CommandLineRunner {
 		Principal principal = new Principal(serieRepository);
 		principal.muestraMenu();
 
-		/*
-		EjemploStreams ejemploStreams = new EjemploStreams();
-		ejemploStreams.muestraEjemplo();
-		*/
+		*//*EjemploStreams ejemploStreams = new EjemploStreams();
+		ejemploStreams.muestraEjemplo();*//*
+
+
 
 	}
-}
+}*/

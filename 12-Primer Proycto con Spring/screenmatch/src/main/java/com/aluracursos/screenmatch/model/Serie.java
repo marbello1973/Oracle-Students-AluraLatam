@@ -27,7 +27,7 @@ public class Serie {
     private String idioma;
     private String pais;
     private String premios;
-    private String url_media;
+    private String poster;
     private String tipo;
     @OneToMany(mappedBy = "serie", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Episodio> episodios;
@@ -50,7 +50,7 @@ public class Serie {
         this.idioma = datosSerie.idioma();
         this.pais = datosSerie.pais();
         this.premios = datosSerie.premios();
-        this.url_media = datosSerie.url_media();
+        this.poster = datosSerie.poster();
         this.tipo = datosSerie.tipo();
     }
 
@@ -182,12 +182,12 @@ public class Serie {
         this.premios = premios;
     }
 
-    public String getUrl_media() {
-        return url_media;
+    public String getPoster() {
+        return poster;
     }
 
-    public void setUrl_media(String url_media) {
-        this.url_media = url_media;
+    public void setPoster(String poster) {
+        this.poster = poster;
     }
 
     public String getTipo() {
@@ -225,7 +225,7 @@ public class Serie {
                 ", idioma='" + idioma + '\'' +
                 ", pais='" + pais + '\'' +
                 ", premios='" + premios + '\'' +
-                ", url_media='" + url_media + '\'' +
+                ", poster='" + poster + '\'' +
                 ", tipo='" + tipo + '\'' +
                 ", episodios='" + episodios + '\'';
     }
