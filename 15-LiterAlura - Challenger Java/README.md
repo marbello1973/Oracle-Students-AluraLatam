@@ -1,5 +1,5 @@
 # LiterAlura - Catálogo de Libros y Autores
-Este proyecto Java se centra en la construcción de un catálogo de libros y autores utilizando diversas tecnologías y herramientas, como [Spring Boot](https://spring.io/projects/spring-framework), [PostgreSQL](https://www.postgresql.org/), y la API [Gutendex](https://gutendex.com/).:100:
+Este proyecto Java se centra en la construcción de un catálogo de libros y autores utilizando diversas tecnologías y herramientas, como [Spring Boot](https://spring.io/projects/spring-framework), [PostgreSQL](https://www.postgresql.org/), y la API [Gutendex](https://gutendex.com/).
 
 #
 
