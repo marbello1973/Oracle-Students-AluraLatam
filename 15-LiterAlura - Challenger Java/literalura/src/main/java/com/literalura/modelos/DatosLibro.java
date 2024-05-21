@@ -3,40 +3,23 @@ package com.literalura.modelos;
 import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import java.util.Collections;
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public record LibroResults(
-        //@JsonAlias("id") Long id,
-        @JsonAlias("title") String titulo,
-        @JsonAlias("authors") List<AutorRecord> autor,
-        @JsonAlias("subjects") List<String> temas,
-        @JsonAlias("languages") List<String> lenguaje,
-        @JsonAlias("copyright") String derechos_autor,
-        @JsonAlias("media_type") String tipo_de_medio,
-        @JsonAlias("download_count") Long contador_descargas
+public record DatosLibro(
+        @JsonAlias("count") Long contador,
+        @JsonAlias("next") String pag_siguiente,
+        @JsonAlias("previous") String pag_anterior,
+        @JsonAlias("results") List<LibroResults> libro
 
-){
-    @Override
-    public List<AutorRecord> autor() {
-        return autor == null ? Collections.emptyList() : autor;
-    }
-
-    @Override
-    public List<String> temas() {
-        return temas == null ? Collections.emptyList() : temas;
-    }
-
-    @Override
-    public List<String> lenguaje() {
-        return lenguaje == null ? Collections.emptyList() : lenguaje;
-    }
-}
+){}
 
 
 /*
-"results": [
+"count": 2265,
+  "next": "https://gutendex.com/books/?page=2&search=charles",
+  "previous": null,
+  "results": [
     {
       "id": 98,
       "title": "A Tale of Two Cities",

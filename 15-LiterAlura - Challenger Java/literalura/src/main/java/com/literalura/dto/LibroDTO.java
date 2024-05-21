@@ -1,13 +1,9 @@
 package com.literalura.dto;
 
-import java.util.List;
+import com.literalura.modelos.Lenguaje;
 
 public record LibroDTO(
-      Long id,
-      String titulo,
-      List<String> temas,
-      List<String> lenguajes,
-      Boolean derechos_de_autor,
-      String tipo_de_medio,
-      Long contador_de_descargas
+        String titulo,
+        Lenguaje lenguaje,
+        Long contador_descargas
 ){}

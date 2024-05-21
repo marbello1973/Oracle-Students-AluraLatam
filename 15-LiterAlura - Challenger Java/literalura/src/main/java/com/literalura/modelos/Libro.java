@@ -1,6 +1,9 @@
 package com.literalura.modelos;
 import jakarta.persistence.*;
+
 import java.util.List;
+import java.util.stream.Collectors;
+
 @Entity
 @Table(name = "libros")
 public class Libro {
@@ -9,39 +12,27 @@ public class Libro {
     private Long id;
     @Column(unique = true)
     private String titulo;
-    @ManyToOne
-    @JoinColumn(name = "autor_id")
-    private List<Autor> autor;
+    @ManyToOne()
+    @JoinColumn( name = "autor_id", nullable = false)
+    private Autor autor;
     private List<String> temas;
-    private List<String> lenguajes;
-    private Boolean derechos_de_autor;
+    @Enumerated(EnumType.STRING)
+    private Lenguaje lenguaje;
+    private String derechos_autor;
     private String tipo_de_medio;
-    private Long contador_de_descargas;
-
-    public Libro(Long id, String titulo, List<Autor> autor, List<String> temas, List<String> lenguajes, Boolean derechos_de_autor, String tipo_de_medio, Long contador_de_descargas) {
-        this.id = id;
-        this.titulo = titulo;
-        this.autor = autor;
-        this.temas = temas;
-        this.lenguajes = lenguajes;
-        this.derechos_de_autor = derechos_de_autor;
-        this.tipo_de_medio = tipo_de_medio;
-        this.contador_de_descargas = contador_de_descargas;
-    }
+    private Long contador_descargas;
 
     public Libro() {
     }
 
-    public List<Autor> getAutor() {
-        return autor;
-    }
-
-    public void setAutor(List<Autor> autor) {
-        autor.forEach(a -> a.setLibro((List<Libro>) this));
-        this.autor = autor;
-    }
-
-    public Libro(List<LibroRecord> datos) {
+    public Libro(LibroResults libroResults) {
+       // this.id = libroResults.id();
+        this.titulo = libroResults.titulo();
+        this.temas = libroResults.temas();
+        this.lenguaje = libroResults.lenguaje().isEmpty() ? null : Lenguaje.desdeCodigo(libroResults.lenguaje().get(0).toUpperCase());
+        this.derechos_autor = libroResults.derechos_autor();
+        this.tipo_de_medio = libroResults.tipo_de_medio();
+        this.contador_descargas = libroResults.contador_descargas();
     }
 
     public Long getId() {
@@ -60,6 +51,14 @@ public class Libro {
         this.titulo = titulo;
     }
 
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
+
     public List<String> getTemas() {
         return temas;
     }
@@ -68,20 +67,20 @@ public class Libro {
         this.temas = temas;
     }
 
-    public List<String> getLenguajes() {
-        return lenguajes;
+    public Lenguaje getLenguaje() {
+        return lenguaje;
     }
 
-    public void setLenguajes(List<String> lenguajes) {
-        this.lenguajes = lenguajes;
+    public void setLenguaje(Lenguaje lenguaje) {
+        this.lenguaje = lenguaje;
     }
 
-    public Boolean getDerechos_de_autor() {
-        return derechos_de_autor;
+    public String getDerechos_autor() {
+        return derechos_autor;
     }
 
-    public void setDerechos_de_autor(Boolean derechos_de_autor) {
-        this.derechos_de_autor = derechos_de_autor;
+    public void setDerechos_autor(String derechos_autor) {
+        this.derechos_autor = derechos_autor;
     }
 
     public String getTipo_de_medio() {
@@ -92,24 +91,25 @@ public class Libro {
         this.tipo_de_medio = tipo_de_medio;
     }
 
-    public Long getContador_de_descargas() {
-        return contador_de_descargas;
+    public Long getContador_descargas() {
+        return contador_descargas;
     }
 
-    public void setContador_de_descargas(Long contador_de_descargas) {
-        this.contador_de_descargas = contador_de_descargas;
+    public void setContador_descargas(Long contador_descargas) {
+        this.contador_descargas = contador_descargas;
     }
 
     @Override
     public String toString() {
-        return  "id=" + id +
+        return "Libro{" +
+                "id=" + id +
                 ", titulo='" + titulo + '\'' +
                 ", autor=" + autor +
                 ", temas=" + temas +
-                ", lenguajes=" + lenguajes +
-                ", derechos_de_autor=" + derechos_de_autor +
+                ", lenguaje=" + lenguaje +
+                ", derechos_autor='" + derechos_autor + '\'' +
                 ", tipo_de_medio='" + tipo_de_medio + '\'' +
-                ", contador_de_descargas=" + contador_de_descargas;
-
+                ", contador_descargas=" + contador_descargas +
+                '}';
     }
 }

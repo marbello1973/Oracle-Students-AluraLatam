@@ -1,4 +1,4 @@
-package com.aluracursos.screenmatch;
+/*package com.aluracursos.screenmatch;
 
 
 import org.springframework.boot.SpringApplication;
@@ -11,4 +11,4 @@ public class ScreenmatchApplication {
 		SpringApplication.run(ScreenmatchApplication.class, args);
 	}
 
-}
+}*/
