@@ -170,12 +170,14 @@ public class Principal {
         mostrarMenu.opcionUnaLinea();
 
         List<Autor> autores = autorRepositorio.findAll();
+        boolean autoresEncontrados = false;
 
         for(Autor autor : autores){
             Integer anoNacimiento = autor.getAno_nacimiento();
             Integer anoMuerte = autor.getAno_muerte();
 
             if(anoNacimiento != null && anoConsulta >= anoNacimiento && (anoMuerte == null || anoConsulta <= anoMuerte)){
+                autoresEncontrados = true;
                 System.out.println("==============================================================================" + '\n' +
                         "Nombre              : " + autor.getNombre() + '\n' +
                         "Fecha nacimiento    : " + autor.getAno_nacimiento() + '\n' +
@@ -191,6 +193,7 @@ public class Principal {
                 }                
             }
         }
+        if(!autoresEncontrados) System.out.println("Perido no registra datos");
     }
 
     private void buscarLibrosLenguaje() {
@@ -230,21 +233,7 @@ public class Principal {
 
 
 
-/*clase original sin dto
-    private void mostrarAutoresRegistrados() {
-        List<Autor> autores = autorRepositorio.findAll();
-        for(Autor autor : autores){
-            System.out.println(
-                    "==============================================================================" + '\n' +
-                    "Autor : " + autor.getNombre() + '\n' +
-                    "Fecha nacimiento: " + autor.getAno_nacimiento() + '\n' +
-                    "Fecha fallecimiento: " + autor.getAno_muerte() + '\n');
-            System.out.println("Libros: ");
-            for(Libro libro : autor.getLibros()){
-                System.out.println(" - " + cortarTitulo(libro.getTitulo()));
-            }
-        }
-    }*/
+
 
 
 
