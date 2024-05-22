@@ -11,13 +11,25 @@ spring.jpa.show-sql=true
 spring.jpa.format-sql=true
 
 
-# Desactivar el log de las sentencias SQL de Hibernate
+# Configura el nivel de log de Hibernate a ERROR
+logging.level.org.hibernate=ERROR
+
+# Desactiva los logs de las sentencias SQL de Hibernate
 logging.level.org.hibernate.SQL=OFF
+
+# Desactiva los logs de los valores de parámetros que Hibernate enlaza a las consultas SQL
 logging.level.org.hibernate.type.descriptor.sql.BasicBinder=OFF
+
+# Desactiva los logs de excepciones SQL
 logging.level.org.hibernate.engine.jdbc.spi.SqlExceptionHelper=OFF
 
-# Opcionalmente, si deseas deshabilitar el registro de consultas DDL (Data Definition Language)
+# Desactiva los logs de extracción de resultados de las consultas SQL
+logging.level.org.hibernate.type.descriptor.sql.BasicExtractor=OFF
+
+# Desactiva los logs de las consultas DDL (Data Definition Language) de Hibernate
 logging.level.org.hibernate.tool.hbm2ddl=OFF
+
+
 
 
 
