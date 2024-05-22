@@ -2,6 +2,7 @@ package com.literalura.principal;
 
 import com.literalura.consumoapi.ConsumoApi;
 import com.literalura.dto.AutorDTO;
+import com.literalura.menusyopciones.MostrarMenu;
 import com.literalura.modelos.*;
 import com.literalura.repositorio.AutorRepositorio;
 import com.literalura.repositorio.LibroRepositorio;
@@ -12,6 +13,7 @@ import java.util.*;
 public class Principal {
     private final Scanner scanner = new Scanner(System.in);
     private final String url = "https://gutendex.com/books/";
+    private final String  contenido = "{\"count\":0, \"next\":null, \"previous\":null, \"results\":[]}";
     private ConvertirDatos convertirDatos = new ConvertirDatos();
     private ConsumoApi consumoApi = new ConsumoApi();
     private LibroRepositorio libroRepositorio;
@@ -22,60 +24,51 @@ public class Principal {
         this.libroRepositorio = libroRepositorio;
         this.autorRepositorio = autorRepositorio;
     }
+    private MostrarMenu mostrarMenu = new MostrarMenu();
 
     public void mostarEnApp(){
-       var opcion = -1;
-       while (opcion != 0){
-           var menu = """
-                   ==============================================================================
-                   
-                   1 - Registrar libro en base de datos
-                   2 - Mostrar libros registrados
-                   3 - Mostrar lista de autores registrados
-                   4 - Mostrar autores vivos en determinado año
-                   5 - Buscar libro por idioma
-                   
-                   0 - Salir
-                   
-                   ==============================================================================
-                   """;
-
-           System.out.println(menu);
-           opcion = scanner.nextInt();
-           scanner.nextLine();
-           switch (opcion){
-               case 1:
-                   obtenerDatosLibros();
-                   break;
-               case 2:
-                   mostrarLibrosEnBaseDatos();
-                   break;
-               case 3:
-                   mostrarAutoresRegistrados();
-                   break;
-               case 4:
-                   mostrarAutoresVivosEnAño();
-                   break;
-               case 5:
-                   buscarLibrosLenguaje();
-                   break;
-               case 0:
-                   System.out.println("Cerrando aplicacion...");
-                   break;
-               default:
-                   System.out.println("Opcion invalida");
-                   break;
-           }
-       }
+        int opcion = -1;
+        while (opcion != 0){
+            mostrarMenu.mostrarMenuOpciones();
+            try{
+                opcion = scanner.nextInt();
+                scanner.nextLine();
+                switch (opcion){
+                    case 1:
+                       obtenerDatosLibros();
+                       break;
+                    case 2:
+                       mostrarLibrosEnBaseDatos();
+                       break;
+                    case 3:
+                       mostrarAutoresRegistrados();
+                       break;
+                    case 4:
+                       mostrarAutoresVivosEnAño();
+                       break;
+                    case 5:
+                       buscarLibrosLenguaje();
+                       break;
+                    case 0:
+                       System.out.println("Cerrando aplicacion...");
+                       break;
+                    default:
+                       System.out.println("Opcion invalida");
+                       break;
+               }
+            }catch(InputMismatchException ex){
+               System.out.println("Entrada invalida. Por favor ingrese un numero del menu ");
+               scanner.nextLine();//consumir la entrada valida
+            }
+        }
     }
 
     private void obtenerDatosLibros() {
-        System.out.println("-------------------------------------------------");
+        mostrarMenu.opcionUnaLinea();
         System.out.println("Escriba el nombre del libro que desea buscar...");
         String nombreLibro = scanner.nextLine().trim();
         String formated = nombreLibro.replace(" ", "+").toLowerCase();
-        String contenido = "{\"count\":0, \"next\":null, \"previous\":null, \"results\":[]}";
-        System.out.println("-------------------------------------------------");
+        //String contenido = "{\"count\":0, \"next\":null, \"previous\":null, \"results\":[]}";
 
         if (nombreLibro.isEmpty()) {
             System.out.println("Nombre del libro no puede estar vacío");
@@ -83,16 +76,18 @@ public class Principal {
         }
 
         try {
+
             var json = consumoApi.obtenerDatosApi(url + "?search=" + formated);
             if (json.contains(contenido)) {
                 System.out.println("No se encontraron resultados...");
+
             } else {
+
                 convertirDatos.obtenerDatos(json, DatosLibro.class).libro().stream()
                         .findFirst()
-                        .ifPresent(datos -> {
+                        .ifPresentOrElse(datos -> {
                             String titulo = datos.titulo();
                             String nombreAutor = datos.autor().get(0).nombre();
-
                             Optional<Libro> libroExiste = libroRepositorio.findByTituloAndAutor(titulo, nombreAutor);
 
                             if (libroExiste.isPresent()) {
@@ -111,23 +106,27 @@ public class Principal {
                                 libroRepositorio.save(libro);
                                 autor.getLibros().add(libro);
                                 autorRepositorio.save(autor);
-                                System.out.println("==============================================================================");
+                                mostrarMenu.opcionDobleLinea();
                                 System.out.println("Libro guardado exitosamente...\n" +
                                         "----------------------LIBRO----------------------" + '\n' +
                                         "Titulo              : " + cortarTitulo(libro.getTitulo()) + '\n' +
                                         "Autor               : " + autor.getNombre() + '\n' +
                                         "Idioma              : " + libro.getLenguaje() + '\n' +
                                         "Numero de descargas : " + libro.getContador_descargas());
-                                //System.out.println("==============================================================================");
                             } catch (Exception ex) {
                                 System.out.println("Error al guardar el libro: " + ex.getMessage());
                             }
+                        }, () -> {
+                            System.out.println("No se encontraron registros");
                         });
             }
+
         } catch (Exception ex) {
             System.out.println("Error al obtener datos: " + ex.getMessage());
         }
+
     }
+
     private void mostrarLibrosEnBaseDatos() {
         libroList = libroRepositorio.findAll();
         libroList.stream()
@@ -142,6 +141,7 @@ public class Principal {
                             "Numero de descargas : " + libro.getContador_descargas() + '\n');
                 });
     }
+
     public List<AutorDTO> mostrarAutoresRegistrados() {
         List<Autor> autores = autorRepositorio.findAll();
         List<AutorDTO> autorDTOS = new ArrayList<>();
@@ -160,13 +160,14 @@ public class Principal {
         }
         return autorDTOS;
     }
+
     private void mostrarAutoresVivosEnAño() {
 
-        System.out.println("-------------------------------------------------");
+        mostrarMenu.opcionUnaLinea();
         System.out.println("Ingrese al año a consultar...");
         int anoConsulta = scanner.nextInt();
         scanner.nextLine();
-        System.out.println("-------------------------------------------------");
+        mostrarMenu.opcionUnaLinea();
 
         List<Autor> autores = autorRepositorio.findAll();
 

@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: literalura
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST}/gutendex_ebook
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    format-sql: true
+
+  # Configura el nivel de log de Hibernate a ERROR
+  logging:
+    level:
+      org:
+        hibernate: ERROR
+        hibernate.SQL: OFF
+        hibernate.type.descriptor.sql.BasicBinder: OFF
+        hibernate.engine.jdbc.spi.SqlExceptionHelper: OFF
+        hibernate.type.descriptor.sql.BasicExtractor: OFF
+        hibernate.tool.hbm2ddl: OFF
+
+hibernate:
+  dialect: org.hibernate.dialect.HSQLDialect
