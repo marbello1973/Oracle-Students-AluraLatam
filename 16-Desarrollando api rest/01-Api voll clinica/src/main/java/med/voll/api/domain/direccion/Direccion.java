@@ -15,6 +15,8 @@ public class Direccion {
     private String complemento;
     private String distrito;
     private String ciudad;
+    private String barrio;
+    private String codigo_postal;
 
     public Direccion(DatosDireccion direccion) {
         this.calle = direccion.calle();
@@ -22,7 +24,10 @@ public class Direccion {
         this.complemento = direccion.complemento();
         this.distrito = direccion.distrito();
         this.ciudad = direccion.ciudad();
+        this.barrio = direccion.barrio();
+        this.codigo_postal = direccion.codigo_postal();
     }
+
 
     public Direccion actualizarDatos(DatosDireccion direccion) {
         this.calle = direccion.calle();
@@ -30,6 +35,8 @@ public class Direccion {
         this.complemento = direccion.complemento();
         this.distrito = direccion.distrito();
         this.ciudad = direccion.ciudad();
+        this.barrio = direccion.barrio();
+        this.codigo_postal = direccion.codigo_postal();
         return this;
     }
 }

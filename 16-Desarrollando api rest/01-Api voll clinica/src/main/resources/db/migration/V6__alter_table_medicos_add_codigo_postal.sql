@@ -1,0 +1,1 @@
+alter table medicos add codigo_postal varchar(50) not null;

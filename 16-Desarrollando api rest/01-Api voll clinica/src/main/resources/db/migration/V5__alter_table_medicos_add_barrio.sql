@@ -1,0 +1,1 @@
+alter table medicos add barrio varchar(50) not null;

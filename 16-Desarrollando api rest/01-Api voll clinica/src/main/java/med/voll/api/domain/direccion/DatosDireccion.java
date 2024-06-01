@@ -12,5 +12,9 @@ public record DatosDireccion(
         @NotBlank
         String numero,
         @NotBlank
-        String complemento
+        String complemento,
+        @NotBlank
+        String barrio,
+        @NotBlank
+        String codigo_postal
 ){}

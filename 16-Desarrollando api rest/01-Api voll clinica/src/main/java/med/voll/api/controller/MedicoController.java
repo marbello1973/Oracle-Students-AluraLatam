@@ -39,21 +39,28 @@ public class MedicoController {
                         medico.getDireccion().getDistrito(),
                         medico.getDireccion().getCiudad(),
                         medico.getDireccion().getNumero(),
-                        medico.getDireccion().getComplemento()));
+                        medico.getDireccion().getComplemento(),
+                        medico.getDireccion().getBarrio(),
+                        medico.getDireccion().getCodigo_postal()));
+
         URI url = uriComponentsBuilder.path("/medico/{id}").buildAndExpand(medico.getId()).toUri();
         return ResponseEntity.created(url).body(datosRespuestaMedico);
     }
 
     //page para ordenar los elementos por pagina
     @GetMapping
-    public ResponseEntity<Page<MedicoDTO>> listadoMedicos (@PageableDefault(size = 20) Pageable paginacion){
+    public ResponseEntity<Page<MedicoDTO>> listadoMedicos (
+            @PageableDefault(size = 20) Pageable paginacion
+    ){
         //return medicoRepository.findAll(paginacion).map(MedicoDTO::new);
         return ResponseEntity.ok(medicoRepository.findByActivoTrue(paginacion).map(MedicoDTO::new));
     }
 
     @PutMapping
     @Transactional
-    public ResponseEntity<DatosRespuestaMedico> actualizarMedico(@RequestBody @Valid ActualizarMedicoDTO actualizarMedicoDTO){
+    public ResponseEntity<DatosRespuestaMedico> actualizarMedico(
+            @RequestBody @Valid ActualizarMedicoDTO actualizarMedicoDTO
+    ){
         Medico medico = medicoRepository.getReferenceById(actualizarMedicoDTO.id());
         medico.actualizarDatos(actualizarMedicoDTO);
         return ResponseEntity.ok(new DatosRespuestaMedico(
@@ -67,7 +74,9 @@ public class MedicoController {
                         medico.getDireccion().getDistrito(),
                         medico.getDireccion().getCiudad(),
                         medico.getDireccion().getNumero(),
-                        medico.getDireccion().getComplemento())));
+                        medico.getDireccion().getComplemento(),
+                        medico.getDireccion().getBarrio(),
+                        medico.getDireccion().getCodigo_postal())));
     }
 
     //Eliminado logico
@@ -93,7 +102,9 @@ public class MedicoController {
                         medico.getDireccion().getDistrito(),
                         medico.getDireccion().getCiudad(),
                         medico.getDireccion().getNumero(),
-                        medico.getDireccion().getComplemento()));
+                        medico.getDireccion().getComplemento(),
+                        medico.getDireccion().getBarrio(),
+                        medico.getDireccion().getCodigo_postal()));
         return ResponseEntity.ok(datosMedico);
     }
 
