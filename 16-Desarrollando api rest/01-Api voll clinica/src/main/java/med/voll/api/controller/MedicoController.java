@@ -1,5 +1,7 @@
 package med.voll.api.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.domain.direccion.DatosDireccion;
 import med.voll.api.domain.medico.*;
@@ -19,10 +21,16 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/medico")
+@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
     @Autowired
     private MedicoRepository medicoRepository;
     @PostMapping
+    @Transactional
+    @Operation(
+            summary = "Registra un medico en la base de datos",
+            description = "",
+            tags = {"Medico Controller", "POST"})
     public ResponseEntity<DatosRespuestaMedico> registrarMedico(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico, UriComponentsBuilder uriComponentsBuilder){
         Medico medico = medicoRepository.save(new Medico(datosRegistroMedico));
         //Return 201 Created medico
@@ -48,7 +56,13 @@ public class MedicoController {
     }
 
     //page para ordenar los elementos por pagina
+
     @GetMapping
+    @Transactional
+    @Operation(
+            summary = "Consulta los medicos en la base de datos",
+            description = "",
+            tags = {"Medico Controller", "GET"})
     public ResponseEntity<Page<MedicoDTO>> listadoMedicos (
             @PageableDefault(size = 20) Pageable paginacion
     ){
@@ -58,6 +72,10 @@ public class MedicoController {
 
     @PutMapping
     @Transactional
+    @Operation(
+            summary = "Actualizacion datos del medico",
+            description = "",
+            tags = {"Medico Controller", "PUT"})
     public ResponseEntity<DatosRespuestaMedico> actualizarMedico(
             @RequestBody @Valid ActualizarMedicoDTO actualizarMedicoDTO
     ){
@@ -82,6 +100,10 @@ public class MedicoController {
     //Eliminado logico
     @DeleteMapping("/{id}")
     @Transactional
+    @Operation(
+            summary = "Consulta medicos desactivados en base de datos",
+            description = "",
+            tags = {"Medico Controller", "DELETE"})
     public ResponseEntity<Medico> eliminarMedico(@PathVariable Long id){
         Medico medico = medicoRepository.getReferenceById(id);
         medico.desactivarMedico();
@@ -89,6 +111,11 @@ public class MedicoController {
     }
 
     @GetMapping("/{id}")
+    @Transactional
+    @Operation(
+            summary = "Consulta de medicos deshabilitados por ID",
+            description = "",
+            tags = {"Medico Controller", "GET"})
     public ResponseEntity<DatosRespuestaMedico> retornaDatosMedico(@PathVariable Long id){
         Medico medico = medicoRepository.getReferenceById(id);
         var datosMedico = new DatosRespuestaMedico(

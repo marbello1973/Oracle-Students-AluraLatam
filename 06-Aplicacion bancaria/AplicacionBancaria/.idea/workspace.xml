@@ -5,21 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9cacccfb-5204-486c-b9c4-1a55453d399b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AplicacionBancaria.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataBase/BaseDatos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Menus/MenuDetalleCuenta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Menus/MenuPrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Usuario/DetallesDeUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Usuario/MetodosUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Usuario/UserMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Usuario/Usuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/validaciones/ConsultasPacientes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/validaciones/HorarioAnticipacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/validaciones/HorarioClinica.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/validaciones/MedicoActivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/validaciones/MedicoConConsulta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/validaciones/PacienteActivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/validaciones/PacienteSinConsulta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/validaciones/ValidadorDeConsultas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/controller/ConsultaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/controller/ConsultaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/AgendaConsultaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/AgendaConsultaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/ConsultaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/ConsultaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/DatosAgendarConsulta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/DatosAgendarConsulta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/DatosDetalleConsulta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/consulta/DatosDetalleConsulta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/medico/MedicoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/medico/MedicoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/paciente/PacienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/domain/paciente/PacienteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/error/ManejadorDeErrores.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/error/ManejadorDeErrores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/error/ValidacionDeintegridad.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../16-Desarrollando api rest/01-Api voll clinica/src/main/java/med/voll/api/error/ValidacionDeintegridad.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +39,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -48,26 +50,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MenuOpciones.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/28-Dependencias Maven java/json-simple-1.1.1.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.MenuOpciones.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/25-Alura curso oracle/02-Java/06-Aplicacion bancaria/AplicacionBancaria",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "vcs.Git",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
